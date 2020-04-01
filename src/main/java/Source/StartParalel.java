@@ -11,8 +11,6 @@ public class StartParalel {
        // final Intracomm comm = MPI.COMM_WORLD;
 
         System.out.println("salut");
-        Secvential sec = new Secvential();
-        sec.start();
         MPI.Finalize();
     }
 }
