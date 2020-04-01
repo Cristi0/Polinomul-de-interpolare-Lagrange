@@ -1,0 +1,13 @@
+https://www.youtube.com/watch?v=WCGKqJrf4N4
+
+prima linie se dau x
+a doua linie se dau y
+a treia linie se da valoarea care trebuie calculata pentru functia polinomiala interpolata lagrange
+
+main class: "runtime.starter.MPJRun"
+Vm options: -jar %path to project%\Proiect_PTP\src\main\resources\mpj-v0_44\lib\starter.jar Source.StartParalel -np 1
+
+unde
+np x; => x nr procese
+
+pentru rulare paralela

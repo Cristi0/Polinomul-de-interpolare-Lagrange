@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+mainClassName = 'Source.Main'
+
+def mpjHome = System.getenv('MPJ_HOME')
+def mpjStarter = files("$mpjHome/lib/starter.jar")
+def mpjJar = files("$mpjHome/lib/mpj.jar")
+def mpjClasspath = sourceSets.main.runtimeClasspath -mpjJar
+
+
+
+dependencies {
+    //testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile mpjJar
+}
+
+run{        //todo: Trebuie setat variabila de mediu la folderul ../src/main/resources/mpj-0_44
+    main = "runtime.starter.MPJRun"
+    classpath = mpjStarter
+    args  mpjClasspath.asPath,'-np', 2
+    dependsOn classes
+}
